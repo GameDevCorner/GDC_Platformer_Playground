@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://vo6h5i5ou4d5"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_vfude"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r75g3"]
+radius = 50.0
+height = 200.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y6nou"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_vfude")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_r75g3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_y6nou")
