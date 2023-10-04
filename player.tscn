@@ -1,12 +1,95 @@
-[gd_scene load_steps=4 format=3 uid="uid://vo6h5i5ou4d5"]
+[gd_scene load_steps=16 format=3 uid="uid://vo6h5i5ou4d5"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_vfude"]
+[ext_resource type="Texture2D" uid="uid://dedkvq8mne1w6" path="res://platformer art/Main Characters/Ninja Frog/Idle (32x32).png" id="2_llvan"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r75g3"]
-radius = 50.0
-height = 200.0
+height = 26.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frnhv"]
+atlas = ExtResource("2_llvan")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hr7bt"]
+atlas = ExtResource("2_llvan")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_co6vy"]
+atlas = ExtResource("2_llvan")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xx0xy"]
+atlas = ExtResource("2_llvan")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02ipr"]
+atlas = ExtResource("2_llvan")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gi3ss"]
+atlas = ExtResource("2_llvan")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chsox"]
+atlas = ExtResource("2_llvan")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m533b"]
+atlas = ExtResource("2_llvan")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i62k1"]
+atlas = ExtResource("2_llvan")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_153i1"]
+atlas = ExtResource("2_llvan")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtgqx"]
+atlas = ExtResource("2_llvan")
+region = Rect2(320, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y6nou"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frnhv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hr7bt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_co6vy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xx0xy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02ipr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gi3ss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chsox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m533b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i62k1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_153i1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtgqx")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_vfude")
@@ -16,3 +99,6 @@ shape = SubResource("CapsuleShape2D_r75g3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_y6nou")
+animation = &"idle"
+autoplay = "idle"
+offset = Vector2(0, -3.26)
