@@ -1,3 +1,6 @@
 # GDC_Playground
 
-![banner](https://github.com/GameDevCorner/GDC_Playground/assets/25123512/7d93d3a8-e860-44f4-8006-b27ee9db41b9)
+A simple platformer playground meant as an introduction to game development in the [Godot](https://godotengine.org/) game engine.
+
+https://github.com/GameDevCorner/GDC_Playground/assets/25123512/95d065b2-fcbd-4f38-a47f-1a0512bf0e7c
+
