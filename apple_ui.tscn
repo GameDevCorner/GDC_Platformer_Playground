@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://degx35xjgtkxb"]
 
-[ext_resource type="Texture2D" uid="uid://caoncek6e3nuv" path="res://assets/Items/Fruits/Apple.png" id="1_yhmg3"]
+[ext_resource type="Texture2D" uid="uid://d0pe7jiwde51r" path="res://assets/Items/Fruits/Apple.png" id="1_yhmg3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sk8j6"]
 atlas = ExtResource("1_yhmg3")
@@ -131,6 +131,8 @@ animations = [{
 
 [sub_resource type="LabelSettings" id="LabelSettings_fqmdd"]
 font_size = 14
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 1)
 
 [node name="AnimatedApple" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_eaiup")

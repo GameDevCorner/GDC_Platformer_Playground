@@ -14,6 +14,8 @@ const WALL_JUMP_VELOCITY = 500
 const MAX_WALLSLIDE_SPEED = 100
 const FRICTION = 10
 
+var showTimer = false
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var state = IDLE
@@ -69,6 +71,24 @@ func _physics_process(delta):
 	velocity.x *= 1 - (delta * FRICTION)
 	move_and_slide()
 
+func _process(delta):
+	var label = get_node("CountdownText") as Label
+	label.visible = showTimer
+	if Globals.level_complete:
+		label.text = milis_to_str(Globals.milis_end - Globals.milis_start)
+	else:
+		label.text = milis_to_str(Globals.time.get_ticks_msec() - Globals.milis_start)
+
+func milis_to_str(milis):
+	var m_seconds = milis%1000
+	var seconds = (milis/1000)%1000
+	var minutes = (milis/1000)/60
+	var hours = (milis/1000)/60/60
+	if hours <= 0:
+		return "%02d:%02d:%03d" % [minutes, seconds, m_seconds]
+	else :
+		return "%02d:%02d:%02d:%03d" % [hours, minutes, seconds, m_seconds]
+
 func die():
 	get_tree().reload_current_scene()
 
@@ -76,14 +96,23 @@ func _on_apple_body_entered(body):
 	print("Apple Aquired!")
 	var label = get_node("AnimatedApple/AppleCounter") as Label
 	var i = int(label.text)
+	if i == Globals.apples:
+		Globals.milis_start = Globals.time.get_ticks_msec()
+		showTimer = true
 	i -= 1
 	if(i <= 0):
+		Globals.milis_end = Globals.time.get_ticks_msec()
+		Globals.level_complete = true
 		var rt_label = get_node("WinText") as RichTextLabel
 		var rt_label_shadow = get_node("WinTextShadow") as RichTextLabel
 		rt_label.visible = true
 		rt_label_shadow.visible = true
 	label.text = str(i)
 
+func _ready():
+	Globals.milis_start = 0
+	Globals.milis_end = 99999999999999
+	Globals.level_complete = false
 
 func _on_collectables_ready():
 	var label = get_node("AnimatedApple/AppleCounter") as Label

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://vo6h5i5ou4d5"]
+[gd_scene load_steps=39 format=3 uid="uid://vo6h5i5ou4d5"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_vfude"]
 [ext_resource type="Texture2D" uid="uid://8viokxdluiim" path="res://assets/Main Characters/Ninja Frog/Fall (32x32).png" id="2_a52xt"]
@@ -242,6 +242,10 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_ivcq4"]
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 1)
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
 script = ExtResource("1_vfude")
@@ -305,3 +309,13 @@ text = "[center] [wave]! Level Cleared ![/wave][/center]
 
 
 [center]Press [tornado radius=2.0 freq=10.0 connected=1]Esc[/tornado] to go to next level[/center]"
+
+[node name="CountdownText" type="Label" parent="."]
+offset_left = 51.0
+offset_top = -103.0
+offset_right = 184.0
+offset_bottom = -77.0
+text = "00:00:000"
+label_settings = SubResource("LabelSettings_ivcq4")
+horizontal_alignment = 2
+vertical_alignment = 3
