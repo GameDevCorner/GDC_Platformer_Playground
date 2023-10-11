@@ -18,13 +18,6 @@ const FRICTION = 10
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var state = IDLE
 
-
-	
-func _ready():
-	var apples = get_node("/root/Variables").apples_left
-	var label = get_node("Apple/Label") as Label
-	label.text = str(apples)
-
 func _physics_process(delta):
 	
 	if state == IDLE or state == RUNNING:
@@ -76,21 +69,23 @@ func _physics_process(delta):
 	velocity.x *= 1 - (delta * FRICTION)
 	move_and_slide()
 
-
 func die():
 	get_tree().reload_current_scene()
-	var player_vars = get_node("/root/Variables")
-	player_vars.apples_left = 9
-
 
 func _on_apple_body_entered(body):
 	print("Apple Aquired!")
-	var label = get_node("Apple/Label") as Label
+	var label = get_node("AnimatedApple/AppleCounter") as Label
 	var i = int(label.text)
 	i -= 1
 	if(i <= 0):
-		var a = get_node("WinText") as RichTextLabel
-		var b = get_node("WinText2") as RichTextLabel
-		a.visible = true
-		b.visible = true
+		var rt_label = get_node("WinText") as RichTextLabel
+		var rt_label_shadow = get_node("WinTextShadow") as RichTextLabel
+		rt_label.visible = true
+		rt_label_shadow.visible = true
 	label.text = str(i)
+
+
+func _on_collectables_ready():
+	var label = get_node("AnimatedApple/AppleCounter") as Label
+	var apples = Globals.apples
+	label.text = str(apples)

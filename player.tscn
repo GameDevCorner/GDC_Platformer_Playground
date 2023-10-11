@@ -1,11 +1,12 @@
-[gd_scene load_steps=37 format=3 uid="uid://vo6h5i5ou4d5"]
+[gd_scene load_steps=38 format=3 uid="uid://vo6h5i5ou4d5"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_vfude"]
-[ext_resource type="Texture2D" uid="uid://d01prlrah481w" path="res://assets/Main Characters/Ninja Frog/Fall (32x32).png" id="2_a52xt"]
-[ext_resource type="Texture2D" uid="uid://c0c2q80rh6cdh" path="res://assets/Main Characters/Ninja Frog/Idle (32x32).png" id="2_gqvfw"]
-[ext_resource type="Texture2D" uid="uid://bdjsspbpsymfc" path="res://assets/Main Characters/Ninja Frog/Run (32x32).png" id="3_a41gx"]
-[ext_resource type="Texture2D" uid="uid://dkakr464b6v04" path="res://assets/Main Characters/Ninja Frog/Jump (32x32).png" id="3_j5nqo"]
-[ext_resource type="Texture2D" uid="uid://dx2u3jlwpvfuc" path="res://assets/Main Characters/Ninja Frog/Wall Jump (32x32).png" id="6_wkigb"]
+[ext_resource type="Texture2D" uid="uid://8viokxdluiim" path="res://assets/Main Characters/Ninja Frog/Fall (32x32).png" id="2_a52xt"]
+[ext_resource type="Texture2D" uid="uid://c07j0kmbm1og5" path="res://assets/Main Characters/Ninja Frog/Idle (32x32).png" id="2_gqvfw"]
+[ext_resource type="Texture2D" uid="uid://qwam00qsjl6e" path="res://assets/Main Characters/Ninja Frog/Run (32x32).png" id="3_a41gx"]
+[ext_resource type="Texture2D" uid="uid://bwwamx5loa5xg" path="res://assets/Main Characters/Ninja Frog/Jump (32x32).png" id="3_j5nqo"]
+[ext_resource type="Texture2D" uid="uid://c4t0jxl65pgb6" path="res://assets/Main Characters/Ninja Frog/Wall Jump (32x32).png" id="6_wkigb"]
+[ext_resource type="PackedScene" uid="uid://degx35xjgtkxb" path="res://apple_ui.tscn" id="7_qb4tx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r75g3"]
 radius = 9.0
@@ -255,29 +256,28 @@ autoplay = "idle"
 offset = Vector2(0, -3.26)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+zoom = Vector2(3, 3)
 
-[node name="Apple" parent="." instance=ExtResource("6_dngas")]
-z_index = 4
-position = Vector2(-267, -144)
+[node name="AnimatedApple" parent="." instance=ExtResource("7_qb4tx")]
+position = Vector2(-176, -92)
 
-[node name="WinText2" type="RichTextLabel" parent="."]
+[node name="WinTextShadow" type="RichTextLabel" parent="."]
 visible = false
 modulate = Color(0, 0, 0, 1)
-z_index = 3
+layout_direction = 2
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -134.0
-offset_top = -49.0
-offset_right = 138.0
-offset_bottom = 54.0
+offset_left = -148.0
+offset_top = -47.0
+offset_right = 152.0
+offset_bottom = 51.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
+size_flags_horizontal = 4
+size_flags_vertical = 8
 bbcode_enabled = true
 text = "[center] [wave]! Level Cleared ![/wave][/center]
 
@@ -286,20 +286,20 @@ text = "[center] [wave]! Level Cleared ![/wave][/center]
 
 [node name="WinText" type="RichTextLabel" parent="."]
 visible = false
-z_index = 3
+layout_direction = 2
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -136.0
-offset_top = -51.5
-offset_right = 136.0
-offset_bottom = 51.5
+offset_left = -150.0
+offset_top = -49.0
+offset_right = 150.0
+offset_bottom = 49.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
+size_flags_horizontal = 4
+size_flags_vertical = 8
 bbcode_enabled = true
 text = "[center] [wave]! Level Cleared ![/wave][/center]
 
