@@ -1,10 +1,10 @@
 [gd_scene load_steps=31 format=3 uid="uid://vo6h5i5ou4d5"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_vfude"]
-[ext_resource type="Texture2D" uid="uid://crqghq5uquagl" path="res://assets/Main Characters/Ninja Frog/Fall (32x32).png" id="2_a52xt"]
-[ext_resource type="Texture2D" uid="uid://bjigadupkd4wk" path="res://assets/Main Characters/Ninja Frog/Idle (32x32).png" id="2_gqvfw"]
-[ext_resource type="Texture2D" uid="uid://cn111dnuxkr1p" path="res://assets/Main Characters/Ninja Frog/Run (32x32).png" id="3_a41gx"]
-[ext_resource type="Texture2D" uid="uid://8axtfappehu4" path="res://assets/Main Characters/Ninja Frog/Jump (32x32).png" id="3_j5nqo"]
+[ext_resource type="Texture2D" uid="uid://bknfgbe31guac" path="res://assets/Main Characters/Ninja Frog/Fall (32x32).png" id="2_a52xt"]
+[ext_resource type="Texture2D" uid="uid://brl7xnltygt16" path="res://assets/Main Characters/Ninja Frog/Idle (32x32).png" id="2_gqvfw"]
+[ext_resource type="Texture2D" uid="uid://dsypc3x5l8xmo" path="res://assets/Main Characters/Ninja Frog/Run (32x32).png" id="3_a41gx"]
+[ext_resource type="Texture2D" uid="uid://t52iyds84ae3" path="res://assets/Main Characters/Ninja Frog/Jump (32x32).png" id="3_j5nqo"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r75g3"]
 height = 26.0
@@ -207,9 +207,9 @@ shape = SubResource("CapsuleShape2D_r75g3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_y6nou")
-animation = &"run"
+animation = &"idle"
 autoplay = "idle"
 offset = Vector2(0, -3.26)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+zoom = Vector2(2, 2)

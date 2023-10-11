@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://vo6h5i5ou4d5" path="res://player.tscn" id="1_0kt1g"]
 [ext_resource type="PackedScene" uid="uid://dcn6ma1g21i6h" path="res://tile_map.tscn" id="2_hycpc"]
 [ext_resource type="PackedScene" uid="uid://71e54pue18eb" path="res://apple.tscn" id="3_bn1ou"]
-[ext_resource type="Texture2D" uid="uid://0d1b5nqkueaw" path="res://assets/Background/Green.png" id="4_3xhev"]
+[ext_resource type="Texture2D" uid="uid://dg72htbdcox5l" path="res://assets/Background/Green.png" id="4_3xhev"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_txv5u"]
 size = Vector2(1767, 541)
@@ -55,8 +55,8 @@ motion_mirroring = Vector2(384, 256)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 384.0
-offset_bottom = 256.0
+offset_right = 754.0
+offset_bottom = 297.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_3xhev")
