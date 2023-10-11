@@ -2,5 +2,4 @@
 
 A simple platformer playground meant as an introduction to game development in the [Godot](https://godotengine.org/) game engine.
 
-https://github.com/GameDevCorner/GDC_Playground/assets/25123512/95d065b2-fcbd-4f38-a47f-1a0512bf0e7c
-
+https://github.com/BlackPhlox/GDC_Playground/assets/25123512/cf2b9a40-d965-414e-b66c-3cdb5de08bd3
