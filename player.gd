@@ -6,7 +6,11 @@ const JUMP_VELOCITY = -350.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
+	
+func _ready():
+	var apples = get_node("/root/Variables").apples_left
+	var label = get_node("Apple/Label") as Label
+	label.text = str(apples)
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -41,3 +45,18 @@ func _physics_process(delta):
 
 func die():
 	get_tree().reload_current_scene()
+	var player_vars = get_node("/root/Variables")
+	player_vars.apples_left = 9
+
+
+func _on_apple_body_entered(body):
+	print("Apple Aquired!")
+	var label = get_node("Apple/Label") as Label
+	var i = int(label.text)
+	i -= 1
+	if(i <= 0):
+		var a = get_node("WinText") as RichTextLabel
+		var b = get_node("WinText2") as RichTextLabel
+		a.visible = true
+		b.visible = true
+	label.text = str(i)
