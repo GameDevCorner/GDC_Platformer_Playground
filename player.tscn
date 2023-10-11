@@ -255,4 +255,53 @@ autoplay = "idle"
 offset = Vector2(0, -3.26)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+zoom = Vector2(2, 2)
+
+[node name="Apple" parent="." instance=ExtResource("6_dngas")]
+z_index = 4
+position = Vector2(-267, -144)
+
+[node name="WinText2" type="RichTextLabel" parent="."]
+visible = false
+modulate = Color(0, 0, 0, 1)
+z_index = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -134.0
+offset_top = -49.0
+offset_right = 138.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "[center] [wave]! Level Cleared ![/wave][/center]
+
+
+[center]Press [tornado radius=2.0 freq=10.0 connected=1]Esc[/tornado] to go to next level[/center]"
+
+[node name="WinText" type="RichTextLabel" parent="."]
+visible = false
+z_index = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -51.5
+offset_right = 136.0
+offset_bottom = 51.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "[center] [wave]! Level Cleared ![/wave][/center]
+
+
+[center]Press [tornado radius=2.0 freq=10.0 connected=1]Esc[/tornado] to go to next level[/center]"

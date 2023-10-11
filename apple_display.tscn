@@ -1,76 +1,76 @@
-[gd_scene load_steps=21 format=3 uid="uid://71e54pue18eb"]
+[gd_scene load_steps=21 format=3 uid="uid://cupqfp0elg2fs"]
 
-[ext_resource type="Texture2D" uid="uid://dci6cqi4ixlda" path="res://assets/Items/Fruits/Apple.png" id="1_icic4"]
+[ext_resource type="Texture2D" uid="uid://dci6cqi4ixlda" path="res://assets/Items/Fruits/Apple.png" id="1_0wsfa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sk8j6"]
-atlas = ExtResource("1_icic4")
+atlas = ExtResource("1_0wsfa")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_63nva"]
-atlas = ExtResource("1_icic4")
+atlas = ExtResource("1_0wsfa")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pjcmu"]
-atlas = ExtResource("1_icic4")
+atlas = ExtResource("1_0wsfa")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_68s6n"]
-atlas = ExtResource("1_icic4")
+atlas = ExtResource("1_0wsfa")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eiu2h"]
-atlas = ExtResource("1_icic4")
+atlas = ExtResource("1_0wsfa")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gmhq3"]
-atlas = ExtResource("1_icic4")
+atlas = ExtResource("1_0wsfa")
 region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hrfew"]
-atlas = ExtResource("1_icic4")
+atlas = ExtResource("1_0wsfa")
 region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rq06p"]
-atlas = ExtResource("1_icic4")
+atlas = ExtResource("1_0wsfa")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1wmf6"]
-atlas = ExtResource("1_icic4")
+atlas = ExtResource("1_0wsfa")
 region = Rect2(256, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7b5hn"]
-atlas = ExtResource("1_icic4")
+atlas = ExtResource("1_0wsfa")
 region = Rect2(288, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f7aet"]
-atlas = ExtResource("1_icic4")
+atlas = ExtResource("1_0wsfa")
 region = Rect2(320, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cwujs"]
-atlas = ExtResource("1_icic4")
+atlas = ExtResource("1_0wsfa")
 region = Rect2(352, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_itviy"]
-atlas = ExtResource("1_icic4")
+atlas = ExtResource("1_0wsfa")
 region = Rect2(384, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0un4y"]
-atlas = ExtResource("1_icic4")
+atlas = ExtResource("1_0wsfa")
 region = Rect2(416, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q4rf4"]
-atlas = ExtResource("1_icic4")
+atlas = ExtResource("1_0wsfa")
 region = Rect2(448, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ntwln"]
-atlas = ExtResource("1_icic4")
+atlas = ExtResource("1_0wsfa")
 region = Rect2(480, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4khxf"]
-atlas = ExtResource("1_icic4")
+atlas = ExtResource("1_0wsfa")
 region = Rect2(512, 0, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_i54hn"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_5df5g"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -129,17 +129,19 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_068px"]
-radius = 9.0
+[sub_resource type="LabelSettings" id="LabelSettings_glpfn"]
+font_size = 12
 
-[node name="Apple" type="Area2D"]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_i54hn")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_5df5g")
 animation = &"apple"
 autoplay = "apple"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_068px")
-
-[connection signal="body_entered" from="." to="." method="queue_free" unbinds=1]
+[node name="Label" type="Label" parent="."]
+offset_left = 9.0
+offset_top = -10.0
+offset_right = 40.0
+offset_bottom = 10.0
+text = "Bla"
+label_settings = SubResource("LabelSettings_glpfn")
+vertical_alignment = 1
