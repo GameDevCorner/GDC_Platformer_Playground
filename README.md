@@ -1,4 +1,4 @@
-# GDC_Playground
+# GDC_Platformer_Playground
 
 A simple platformer playground meant as an introduction to game development in the [Godot](https://godotengine.org/) game engine.
 
